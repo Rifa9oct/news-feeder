@@ -6,7 +6,7 @@ import RightBottom from "../../components/RightSideNews/RightBottom";
 import useNewsQuery from "../../hooks/useNewsQuery";
 
 const News = () => {
-  const { noData} = useNewsQuery();
+  const { noData } = useNewsQuery();
 
   return (
     <div className="my-10 lg:my-14">
@@ -26,7 +26,7 @@ const News = () => {
               <RightBottom />
             </div>
           </div>
-        ): <p className="flex justify-center items-center text-3xl">No Data Found...</p>
+        ) : <p className="flex justify-center items-center text-3xl">No Data Found...</p>
       }
     </div>
   );
