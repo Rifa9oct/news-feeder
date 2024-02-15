@@ -1,7 +1,7 @@
 import useNewsQuery from "../../hooks/useNewsQuery";
 import { formatDate } from "../../utils/formatDate";
 
-const LeftHalfNews2 = () => {
+const LeftBottom = () => {
     const { leftHalfNews } = useNewsQuery();
 
     return (
@@ -9,7 +9,7 @@ const LeftHalfNews2 = () => {
             {
                 leftHalfNews?.slice(2, leftHalfNews.length).map(item => {
                     return (
-                        <div key={item.source.name} className="col-span-12 lg:col-span-4">
+                        <div key={item.url} className="col-span-12 lg:col-span-4">
                             <div className="col-span-12 md:col-span-4">
                                 <a href={item.url} target="_blank" rel="noopener noreferrer">
                                     <h3 className="mb-2.5 text-xl font-bold lg:text-[20px]">{item.title}</h3>
@@ -27,4 +27,4 @@ const LeftHalfNews2 = () => {
     );
 };
 
-export default LeftHalfNews2;
+export default LeftBottom;

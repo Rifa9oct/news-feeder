@@ -9,7 +9,7 @@ const RightTop = () => {
             {
                 rightHalfNews?.slice(0, 1).map(item => {
                     return (
-                        <div key={item.source.name} className="col-span-12 md:col-span-8">
+                        <div key={item.url} className="col-span-12 md:col-span-8">
                             {
                                 item.urlToImage && <img className="w-full" src={item.urlToImage} alt="thumb" />
                             }
