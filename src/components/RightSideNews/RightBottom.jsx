@@ -4,7 +4,7 @@ import { formatDate } from "../../utils/formatDate";
 
 const RightBottom = () => {
     const { rightHalfNews } = useNewsQuery();
-    console.log(rightHalfNews)
+    
     return (
         <div>
             {

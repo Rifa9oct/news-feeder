@@ -1,6 +1,13 @@
+import { useContext } from "react";
 import logo from "../../assets/logo_light.png";
+import { NewsContext } from "../../provider/NewsProvider";
 
 const Footer = () => {
+  const {setCategory} = useContext(NewsContext);
+
+  const handleClick = (category)=>{
+    setCategory(category);
+  }
   return (
     <div className="bg-neutral-800 pb-8 pt-20 text-white sm:pt-24">
       <div className="container mx-auto">
@@ -9,44 +16,44 @@ const Footer = () => {
             <img className="max-md:col-span-2" src={logo} alt="lws" />
             <ul role="list" className="space-y-4">
               <li>
-                <a href="#" className="text-sm font-semibold">
+                <a href="#" onClick={()=> handleClick("general")} className="text-sm font-semibold">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm font-semibold">
+                <a href="#" onClick={()=> handleClick("general")} className="text-sm font-semibold">
                   General
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm font-semibold">
+                <a href="#" onClick={()=> handleClick("business")} className="text-sm font-semibold">
                   Business
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm font-semibold">
+                <a href="#" onClick={()=> handleClick("entertainment")} className="text-sm font-semibold">
                   Entertainment
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm font-semibold">
+                <a href="#" onClick={()=> handleClick("health")} className="text-sm font-semibold">
                   Health
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm font-semibold">
+                <a href="#" onClick={()=> handleClick("science")} className="text-sm font-semibold">
                   Science
                 </a>
               </li>
             </ul>
             <ul role="list" className="space-y-4">
               <li>
-                <a href="#" className="text-sm font-semibold">
+                <a href="#" onClick={()=> handleClick("sports")} className="text-sm font-semibold">
                   Sports
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm font-semibold">
+                <a href="#" onClick={()=> handleClick("technology")} className="text-sm font-semibold">
                   Technology
                 </a>
               </li>

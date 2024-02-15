@@ -5,7 +5,7 @@ const LeftTop = () => {
     const { leftHalfNews } = useNewsQuery();
 
     return (
-        <div className="col-span-12 grid grid-cols-12 gap-4 mb-6">
+        <div className="col-span-12 grid grid-cols-12 gap-6 mb-6">
             <div className="col-span-12 lg:col-span-8">
                 {
                     leftHalfNews?.slice(0, 1).map(item => {
