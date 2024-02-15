@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { NewsContext } from "../provider/NewsProvider";
 
 const useNewsQuery = () => {
+  const [noData, setNodata] = useState(null);
   const [news, setNews] = useState();
   const { category, searchNews } = useContext(NewsContext);
   const [loading, setLoading] = useState(true);
@@ -22,13 +23,24 @@ const useNewsQuery = () => {
           const filterdata = data?.articles?.filter(
             (item) => item.description !== null
           );
-          setNews(filterdata);
+          if (filterdata.length > 0) {
+            setNews(filterdata);
+            setNodata(null)
+          } else {
+            setNodata("No Data Found...");
+          }
         }
         if (category) {
           const filterdata = data?.articles?.filter(
             (item) => item.description !== null
           );
-          setNews(filterdata);
+
+          if (filterdata.length > 0) {
+            setNews(filterdata);
+            setNodata(null)
+          } else {
+            setNodata("No Data Found...");
+          }
         }
         if (searchNews) {
           const filterdata = data?.articles?.filter(
@@ -36,7 +48,12 @@ const useNewsQuery = () => {
               item.title?.toLowerCase().includes(searchNews.toLowerCase()) ||
               item.description?.toLowerCase().includes(searchNews.toLowerCase())
           );
-          setNews(filterdata);
+          if (filterdata.length > 0) {
+            setNews(filterdata);
+            setNodata(null)
+          } else {
+            setNodata("No Data Found...");
+          }
         }
         setLoading(false);
       })
@@ -57,6 +74,7 @@ const useNewsQuery = () => {
     leftHalfNews,
     rightHalfNews,
     loading,
+    noData,
   };
 };
 

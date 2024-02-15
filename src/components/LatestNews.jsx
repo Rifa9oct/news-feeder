@@ -21,10 +21,14 @@ const LatestNews = () => {
                             </div>
                             <div className="col-span-12 lg:col-span-8" >
                                 {
-                                    item.urlToImage && <img className="w-full" src={item.urlToImage} alt="thumb" />
-                                }
-                                {
-                                    item.author && <p className="mt-5 text-base text-[#5C5955]">Illustration: {item.author}</p>
+                                    item.urlToImage && (
+                                        <>
+                                            <img className="w-full" src={item.urlToImage} alt="thumb" />
+                                            {
+                                                item.author && <p className="mt-5 text-base text-[#5C5955]">Illustration: {item.author}</p>
+                                            }
+                                        </>
+                                    )
                                 }
                             </div>
                         </div>
